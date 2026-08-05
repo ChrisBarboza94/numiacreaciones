@@ -1,0 +1,248 @@
+:root {
+    --color-principal: #a35c7a;
+    --color-secundario: #f4d9e3;
+    --color-claro: #fff8fb;
+    --color-texto: #332b2e;
+    --color-blanco: #ffffff;
+    --color-whatsapp: #198754;
+    --sombra: 0 10px 30px rgba(60, 30, 45, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-claro);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 24px;
+}
+
+.encabezado {
+    align-items: center;
+    background:
+        linear-gradient(
+            rgba(70, 25, 48, 0.55),
+            rgba(70, 25, 48, 0.55)
+        ),
+        url("imagenes/portada.jpg") center/cover;
+    color: var(--color-blanco);
+    display: flex;
+    min-height: 620px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 16px;
+}
+
+.encabezado p {
+    font-size: 1.3rem;
+    margin: 0 auto 32px;
+    max-width: 650px;
+}
+
+.presentacion,
+.productos,
+.como-comprar,
+.contacto {
+    padding: 80px 0;
+}
+
+.presentacion {
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-principal);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.presentacion p,
+.contacto p {
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.productos {
+    background-color: var(--color-blanco);
+}
+
+.grilla-productos {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 45px;
+}
+
+.producto {
+    background-color: var(--color-claro);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.producto:hover {
+    box-shadow: 0 16px 38px rgba(60, 30, 45, 0.2);
+    transform: translateY(-6px);
+}
+
+.producto img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
+.producto-contenido {
+    padding: 24px;
+}
+
+.producto h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    margin-bottom: 18px;
+}
+
+.producto strong {
+    color: var(--color-principal);
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.boton {
+    border-radius: 999px;
+    color: var(--color-blanco);
+    display: inline-block;
+    font-weight: bold;
+    padding: 13px 24px;
+    text-decoration: none;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.principal {
+    background-color: var(--color-principal);
+}
+
+.whatsapp {
+    background-color: var(--color-whatsapp);
+}
+
+.pasos {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 45px;
+    text-align: center;
+}
+
+.pasos div {
+    background-color: var(--color-blanco);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    padding: 35px 25px;
+}
+
+.pasos span {
+    align-items: center;
+    background-color: var(--color-principal);
+    border-radius: 50%;
+    color: var(--color-blanco);
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: 55px;
+    justify-content: center;
+    margin: 0 auto 20px;
+    width: 55px;
+}
+
+.pasos h3 {
+    margin-bottom: 10px;
+}
+
+.contacto {
+    background-color: var(--color-secundario);
+    text-align: center;
+}
+
+.contacto p {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: var(--color-texto);
+    color: var(--color-blanco);
+    padding: 25px 0;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .grilla-productos,
+    .pasos {
+        grid-template-columns: 1fr;
+    }
+
+    .encabezado {
+        min-height: 520px;
+    }
+
+    .producto {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 0 16px;
+    }
+
+    .presentacion,
+    .productos,
+    .como-comprar,
+    .contacto {
+        padding: 55px 0;
+    }
+
+    .boton {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
